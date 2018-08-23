@@ -16,3 +16,22 @@ body {
   height: 250px;
   background-size: cover;
 }
+
+.button-group {
+  position: absolute;
+}
+
+.restart-button {
+  position: relative;
+  left: 75.3em;
+  bottom: 2.5em;
+  border: none;
+  padding: 10px;
+  transition: 0.4s;
+}
+.restart-button:hover {
+  background-color: #6ab04c;
+  border: none;
+  color: white;
+  transform: scale(1.1, 1.1);
+}
