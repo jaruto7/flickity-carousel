@@ -3,13 +3,16 @@ var flkty = new Flickity( elem, {
   	// options
 	cellAlign: 'left',
 	//disable dots
-	pageDots: false
-
+	pageDots: false,
+	// Enable hash behavior
+	hash: true,
 });
 
-// element argument can be a selector string
-//   for an individual element
-var flkty = new Flickity( '.main-carousel', {
-  // options
 
-});
+// // element argument can be a selector string
+// //   for an individual element
+// var flkty = new Flickity( '.main-carousel', {
+//   // options
+
+// });
+
