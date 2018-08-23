@@ -1,6 +1,7 @@
 var elem = document.querySelector('.main-carousel');
 var buttonGroup = document.querySelector('.button-group');
 var buttons = buttonGroup.querySelectorAll('.restart-button');
+var progressBar = document.querySelector('.progress-bar');
 
 var flkty = new Flickity( elem, {
   	// options
@@ -9,6 +10,7 @@ var flkty = new Flickity( elem, {
 	pageDots: false,
 	// Enable hash behavior
 	hash: true,
+
 });
 
 // // element argument can be a selector string
@@ -25,4 +27,10 @@ buttonGroup.addEventListener( 'click', function( event ) {
   }
   var index = buttons.indexOf( event.target );
   flkty.select( index );
+
+  // Use progress bar scroll
+  // flkty.on( 'scroll', function( progress ) {
+  // progress = Math.max( 0, Math.min( 1, progress ) );
+  // progressBar.style.width = progress * 100 + '%';
 });
+

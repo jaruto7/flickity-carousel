@@ -32,6 +32,12 @@ body {
 .restart-button:hover {
   background-color: #6ab04c;
   border: none;
-  color: white;
+  color: #fff;
   transform: scale(1.1, 1.1);
+}
+
+.progress-bar {
+  height: 20px;
+  width: 0;
+  background: #333;
 }
