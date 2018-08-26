@@ -1,3 +1,23 @@
+var tmplList = document.getElementById('template-list').innerHTML;
+var tmplMain = document.getElementById('main-carousel').innerHTML;
+
+Mustache.parse(tmplList);
+
+var listItems = '';
+
+for(var i = 0; i < myObject.length; i++) {
+  // console.log(myObject);
+  listItems += Mustache.render(tmplList, myObject[i]);
+  // console.log(listItems);
+}
+
+tmplMain.innerHTML = listItems;
+// console.log(listItems);
+
+// <div class="carousel-cell" style="background-image: url( {{ image }} )">
+//     <div class="container">{{ title }}</div>  
+//   </div>
+
 var elem = document.querySelector('.main-carousel');
 var buttonGroup = document.querySelector('.button-group');
 var buttons = buttonGroup.querySelectorAll('.restart-button');
@@ -28,17 +48,3 @@ buttonGroup.addEventListener( 'click', function( event ) {
   var index = buttons.indexOf( event.target );
   flkty.select( index );
 });
-
-var page-wrapper = document.getElementById('page-wrapper');
-
-Mustache.parse(page-wrapper);
-
-var listItems = '';
-
-for(var i = 0; i < myObject.length; i++) {
-  listItems = listItems + Mustache.render(page-wrapper, myObject[i]);
-}
-
-var allItems = Mustache.render(page-wrapper, {title: listItems}, {image: listItems}, {description: listItems});
-
-page-wrapper.insertAdjacentHTML('beforeend', allItems);

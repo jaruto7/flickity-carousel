@@ -16,33 +16,18 @@
 	  <a href="#carousel-cell5">Cell 5</a>
 	</p>
 
-<div class="main-carousel">
-  <div class="carousel-cell" id="carousel-cell1" style="background-image: url()">
-  	<div class="container">Lorem ipsum</div>	
-  </div>
-  <div class="carousel-cell" id="carousel-cell2" style="background-image: url()">
-  	<div class="container">Lorem ipsum</div>	
-  </div>
-  <div class="carousel-cell" id="carousel-cell3" style="background-image: url()">
-  	<div class="container">Lorem ipsum</div>	
-  </div>
-  <div class="carousel-cell" id="carousel-cell4" style="background-image: url()">
-  	<div class="container">Lorem ipsum</div>	
-  </div>
-  <div class="carousel-cell" id="carousel-cell5" style="background-image: url()">
-  	<div class="container">Lorem ipsum</div>	
-  </div>
+<div id="main-carousel" class="main-carousel">
+
 </div>
 <div class="button-group">
   <button class="restart-button" data-selector=".restart">Restart</button>
 </div>
 <div class="progress-bar"></div>
 
-<div id="page-wrapper" class="container">
-	<h3> {{ title }} </h3>
-		{{ description }}
-</div>
-
+<script id="template-list" type="x-tmpl-mustache">
+	{{ title }}
+</script>
+	
 <script>
 var myObject = [
 	{
