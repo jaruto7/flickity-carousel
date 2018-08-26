@@ -1,32 +1,31 @@
-var tmplList = document.getElementById('template-list').innerHTML;
-var tmplMain = document.getElementById('main-carousel').innerHTML;
-
-Mustache.parse(tmplList);
-
-var listItems = '';
-
-for(var i = 0; i < myObject.length; i++) {
-  // console.log(myObject);
-  listItems += Mustache.render(tmplList, myObject[i]);
-  // console.log(listItems);
-}
-
-tmplMain.innerHTML = listItems;
-// console.log(listItems);
-
-// <div class="carousel-cell" style="background-image: url( {{ image }} )">
-//     <div class="container">{{ title }}</div>  
-//   </div>
-
 var elem = document.querySelector('.main-carousel');
 var buttonGroup = document.querySelector('.button-group');
 var buttons = buttonGroup.querySelectorAll('.restart-button');
 var progressBar = document.querySelector('.progress-bar');
 
+// Use mustache to output array elements into html
+var tmplMain = document.getElementById('main-carousel').innerHTML;
+var tmplItm = document.getElementById('template-items').innerHTML;
+
+Mustache.parse(tmplItm);
+
+var listItems = '';
+
+for(var i = 0; i < myObject.length; i++) {
+  // console.log(myObject);
+  listItems += Mustache.render(tmplItm, myObject[i]);
+  // console.log(listItems);
+}
+
+var fullProductList = Mustache.render(tmplMain, {carousel: listItems});
+// console.log(listItems);
+result.innerHTML = fullProductList;
+
+// Use flickity to create carousel and add some options
 var flkty = new Flickity( elem, {
   	// options
 	cellAlign: 'left',
-	//disable dots
+	//disable dots below carousel
 	pageDots: false,
 	// Enable hash behavior
 	hash: true,
@@ -37,7 +36,7 @@ flkty.on( 'scroll', function( progress ) {
 	progress = Math.max( 0, Math.min( 1, progress ) );
   	progressBar.style.width = progress * 100 + '%';
   });
-// Use button to restart
+// Use button restart functionality to move to the first slide
 buttons = fizzyUIUtils.makeArray( buttons );
 
 buttonGroup.addEventListener( 'click', function( event ) {

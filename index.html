@@ -9,23 +9,30 @@
 <body>
 	<p>
   	  View:
-	  <a href="#carousel-cell1">Cell 1</a>,
-	  <a href="#carousel-cell2">Cell 2</a>,
-	  <a href="#carousel-cell3">Cell 3</a>,
-	  <a href="#carousel-cell4">Cell 4</a>,
-	  <a href="#carousel-cell5">Cell 5</a>
+	  <a href="#carousel-cell1">First</a>,
+	  <a href="#carousel-cell2">Second</a>,
+	  <a href="#carousel-cell3">Third</a>,
+	  <a href="#carousel-cell4">Forth</a>,
+	  <a href="#carousel-cell5">Fifth slide</a>
 	</p>
 
-<div id="main-carousel" class="main-carousel">
+<div id="result" class="main-carousel"></div>
+<script id="main-carousel" type="x-tmpl-mustache">
+	{{{ carousel }}}
+</script>
 
-</div>
 <div class="button-group">
   <button class="restart-button" data-selector=".restart">Restart</button>
 </div>
 <div class="progress-bar"></div>
 
-<script id="template-list" type="x-tmpl-mustache">
-	{{ title }}
+<script id="template-items" type="x-tmpl-mustache">
+  <div class="carousel-cell" id="{{ id }}" style="background-image: url( '{{ image }}' )">
+    <div class="container">
+    	<h3>{{ title }}</h3>
+    	<p>{{ description }}</p>
+	</div>  
+  </div>
 </script>
 	
 <script>
@@ -33,27 +40,32 @@ var myObject = [
 	{
 		image: 'https://images.unsplash.com/photo-1534745244408-0201364a26d4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a4077a43b27bbbb4f524184d0124bc5b&auto=format&fit=crop&w=600&q=60',
 		description: 'Lorem ipsum', 
-		title: 'Lorem Ipsum' 
+		title: 'Lorem Ipsum',
+		id: 'carousel-cell1' 
 	},
 	{
 		image: 'https://images.unsplash.com/photo-1534739302117-e9ff126dec91?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f634840a60bef9c3ef9797edfd66cadb&auto=format&fit=crop&w=600&q=60',
 		description: 'Lorem Ipsum2',
-		title: 'Lorem Ipsum' 
+		title: 'Lorem Ipsum',
+		id: 'carousel-cell2' 
 	},
 	{
 		image: 'https://images.unsplash.com/photo-1534728806474-5fb00a076d65?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3c8996d0bacd6161aa61851371e31df8&auto=format&fit=crop&w=600&q=60',
 		description: 'Lorem Ipsum3',
-		title: 'Lorem Ipsum' 
+		title: 'Lorem Ipsum',
+		id: 'carousel-cell3' 
 	},
 	{
 		image: 'https://images.unsplash.com/photo-1534770443136-d0ff057a7d71?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1bf287612e50c53184028efcf7d911a1&auto=format&fit=crop&w=600&q=60',
 		description: 'Lorem Ipsum4',
-		title: 'Lorem Ipsum' 
+		title: 'Lorem Ipsum',
+		id: 'carousel-cell4' 
 	},
 	{
 		image: 'https://images.unsplash.com/photo-1534730460978-5183a9d11d7b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b080b7b7e50f2b78c2161d0380dadd52&auto=format&fit=crop&w=600&q=60',
 		description: 'Lorem Ipsum5',
-		title: 'Lorem Ipsum' 
+		title: 'Lorem Ipsum',
+		id: 'carousel-cell5' 
 	}
 ];
 </script>
