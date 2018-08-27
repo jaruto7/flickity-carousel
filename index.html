@@ -34,6 +34,8 @@
 	</div>  
   </div>
 </script>
+
+<div id="map"></div>
 	
 <script>
 var myObject = [
@@ -41,31 +43,36 @@ var myObject = [
 		image: 'https://images.unsplash.com/photo-1534745244408-0201364a26d4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a4077a43b27bbbb4f524184d0124bc5b&auto=format&fit=crop&w=600&q=60',
 		description: 'Lorem ipsum', 
 		title: 'Lorem Ipsum',
-		id: 'carousel-cell1' 
+		id: 'carousel-cell1',
+		coords: {lat: -25.363, lng: 131.044}
 	},
 	{
 		image: 'https://images.unsplash.com/photo-1534739302117-e9ff126dec91?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f634840a60bef9c3ef9797edfd66cadb&auto=format&fit=crop&w=600&q=60',
 		description: 'Lorem Ipsum2',
 		title: 'Lorem Ipsum',
-		id: 'carousel-cell2' 
+		id: 'carousel-cell2',
+		coords: {lat: -25.363, lng: 131.044} 
 	},
 	{
 		image: 'https://images.unsplash.com/photo-1534728806474-5fb00a076d65?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3c8996d0bacd6161aa61851371e31df8&auto=format&fit=crop&w=600&q=60',
 		description: 'Lorem Ipsum3',
 		title: 'Lorem Ipsum',
-		id: 'carousel-cell3' 
+		id: 'carousel-cell3',
+		coords: {lat: -25.363, lng: 131.044} 
 	},
 	{
 		image: 'https://images.unsplash.com/photo-1534770443136-d0ff057a7d71?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1bf287612e50c53184028efcf7d911a1&auto=format&fit=crop&w=600&q=60',
 		description: 'Lorem Ipsum4',
 		title: 'Lorem Ipsum',
-		id: 'carousel-cell4' 
+		id: 'carousel-cell4',
+		coords: {lat: -25.363, lng: 131.044} 
 	},
 	{
 		image: 'https://images.unsplash.com/photo-1534730460978-5183a9d11d7b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b080b7b7e50f2b78c2161d0380dadd52&auto=format&fit=crop&w=600&q=60',
 		description: 'Lorem Ipsum5',
 		title: 'Lorem Ipsum',
-		id: 'carousel-cell5' 
+		id: 'carousel-cell5',
+		coords: {lat: -25.363, lng: 131.044} 
 	}
 ];
 </script>
@@ -73,6 +80,9 @@ var myObject = [
 <script src="vendor/flickity.pkgd.min.js"></script>
 <script src="vendor/hash.js"></script>
 <script src="vendor/mustache.js"></script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlQICBHCCMoL_NAIURHgGTHRzQl-dI4CY&callback=initMap">
+</script>
 <script src="js/script.js"></script>
 </body>
 </html>

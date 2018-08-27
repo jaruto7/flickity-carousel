@@ -30,11 +30,11 @@ body {
 
 .restart-button {
   position: relative;
-  left: 74.3em;
-  bottom: 1.7em;
+  left: 74.2em;
+  bottom: 2.5em;
   border: none;
   padding: 10px;
-  position: fixed;
+  // position: fixed;
   transition: 0.4s;
 }
 .restart-button:hover {
@@ -44,9 +44,16 @@ body {
   transform: scale(1.1, 1.1);
 }
 
+// Styling progress bar button
 .progress-bar {
   height: 25px;
   width: 0;
   border-radius: 80%;
   background: #333;
+}
+// Styling map
+#map {
+  height: 600px;
+  width: 100%;
+  // background-color: gray;
 }
