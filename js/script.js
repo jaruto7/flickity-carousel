@@ -29,7 +29,7 @@ function initMap() {
   var map = new google.maps.Map(
       document.getElementById('map'), {zoom: 4, center: uluru});
   // The marker, positioned at Uluru
-  var marker = new google.maps.Marker({position: {coords}, map: map});
+  var marker = new google.maps.Marker({position: uluru, map: map});
 }
 
 // Use flickity to create carousel and add some options
