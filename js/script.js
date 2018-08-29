@@ -23,13 +23,15 @@ result.innerHTML = fullProductList;
 
 // Initialize and add the map
 function initMap() {
-  // The location of Uluru
-  var uluru = {lat: -25.344, lng: 131.036};
-  // The map, centered at Uluru
-  var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 4, center: uluru});
-  // The marker, positioned at Uluru
-  var marker = new google.maps.Marker({position: uluru, map: map});
+  // The location 
+      // The map, centered at first position
+      var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 4, center: myObject[0].coords});
+      console.log(myObject[0].coords);
+      for(var i = 0; i < myObject.length; i++){
+      // The all markers pos add into map
+      var allMarkers = new google.maps.Marker({position: myObject[i].coords, map: map});
+  }
 }
 
 // Use flickity to create carousel and add some options
@@ -56,5 +58,5 @@ buttonGroup.addEventListener( 'click', function( event ) {
     return;
   }
   var index = buttons.indexOf( event.target );
-  flkty.select( index );
+  flkty.select(0);
 });
