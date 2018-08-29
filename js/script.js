@@ -2,6 +2,7 @@ var elem = document.querySelector('.main-carousel');
 var buttonGroup = document.querySelector('.button-group');
 var buttons = buttonGroup.querySelectorAll('.restart-button');
 var progressBar = document.querySelector('.progress-bar');
+var i;
 
 // Use mustache to output array elements into html
 var tmplMain = document.getElementById('main-carousel').innerHTML;
@@ -27,11 +28,17 @@ function initMap() {
       // The map, centered at first position
       var map = new google.maps.Map(
       document.getElementById('map'), {zoom: 4, center: myObject[0].coords});
-      console.log(myObject[0].coords);
-      for(var i = 0; i < myObject.length; i++){
+      // console.log(myObject[0].coords);
+      for(i = 0; i < myObject.length; i++){
       // The all markers pos add into map
       var allMarkers = new google.maps.Marker({position: myObject[i].coords, map: map});
+      allMarkers.addListener('click', function(){
+        var pointerMap = function(){        
+          flkty.select(i);
+        }  
+      });     
   }
+  pointerMap();
 }
 
 // Use flickity to create carousel and add some options
